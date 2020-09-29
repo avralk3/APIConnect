@@ -1,8 +1,8 @@
-product: 6.0.0
+product: 7.0.0
 info:
   name: acme-bank
   title: acme-bank
-  version: 6.0.0
+  version: 7.0.0
 apis:
   acme-bank:
     $ref: acme-bank.yaml
