@@ -1,0 +1,35 @@
+info:
+  version: 1.0.0
+  title: secondproduct
+  name: secondproduct
+gateways:
+  - datapower-api-gateway
+plans:
+  default-plan:
+    rate-limits:
+      default:
+        value: 100/1hour
+    title: Default Plan
+    description: Default Plan
+    approval: false
+  silver:
+    rate-limits:
+      default:
+        value: 100/1hour
+    title: silver
+    approval: false
+apis:
+  secondapi1.0.0:
+    $ref: secondapi_1.0.0.yaml
+visibility:
+  view:
+    type: public
+    orgs: []
+    tags: []
+    enabled: true
+  subscribe:
+    type: authenticated
+    orgs: []
+    tags: []
+    enabled: true
+product: 1.0.0
