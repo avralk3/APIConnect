@@ -1,0 +1,29 @@
+info:
+  version: 1.0.0
+  title: helloproduct
+  name: helloproduct
+apis:
+  hello1.0.0:
+    $ref: hello_1.0.0.yaml
+plans:
+  default-plan:
+    title: Default Plan
+    description: Default Plan
+    approval: false
+    rate-limits:
+      default:
+        value: 100/1hour
+gateways:
+  - datapower-api-gateway
+product: 1.0.0
+visibility:
+  view:
+    enabled: true
+    type: public
+    tags: []
+    orgs: []
+  subscribe:
+    enabled: true
+    type: authenticated
+    tags: []
+    orgs: []
