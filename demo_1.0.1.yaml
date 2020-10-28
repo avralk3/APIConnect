@@ -1,0 +1,91 @@
+swagger: '2.0'
+info:
+  title: Demo
+  x-ibm-name: demo
+  version: 1.0.1
+schemes:
+  - https
+basePath: /demo
+x-ibm-configuration:
+  cors:
+    enabled: true
+  gateway: datapower-api-gateway
+  type: rest
+  phase: realized
+  enforced: true
+  testable: true
+  assembly:
+    execute:
+      - gatewayscript:
+          version: 2.0.0
+          title: gatewayscript
+          source: "var apim = require('apim');\r\nvar id = apim.getvariable('request.parameter.id');\r\nvar payload={\r\n\"title\": \"Member_Details\",\r\n\"first_name\": \"Rick\",\r\n\"last_name\": \"Gu\",\r\n\"Age\": 38,\r\n\"Plan\": \"PPO\",\r\n\"userId\": id\r\n};\r\nvar method = apim.getvariable('request.verb');\r\n\r\nif (String(method) == 'GET'){\r\napim.setvariable('message.body', payload);\r\n};"
+  properties:
+    target-url:
+      value: 'http://example.com/operation-name'
+      description: The URL of the target service
+      encoded: false
+  activity-log:
+    enabled: true
+    error-content: header
+    success-content: activity
+  application-authentication:
+    certificate: false
+paths:
+  /v1:
+    get:
+      responses:
+        '200':
+          description: success
+          schema:
+            type: string
+      consumes: []
+      produces: []
+    put:
+      responses:
+        '200':
+          description: success
+          schema:
+            type: string
+      consumes: []
+      produces: []
+    post:
+      responses:
+        '200':
+          description: success
+          schema:
+            type: string
+      consumes: []
+      produces: []
+    delete:
+      responses:
+        '200':
+          description: success
+          schema:
+            type: string
+      consumes: []
+      produces: []
+    options:
+      responses:
+        '200':
+          description: success
+          schema:
+            type: string
+      consumes: []
+      produces: []
+    head:
+      responses:
+        '200':
+          description: success
+          schema:
+            type: string
+      consumes: []
+      produces: []
+    patch:
+      responses:
+        '200':
+          description: success
+          schema:
+            type: string
+      consumes: []
+      produces: []

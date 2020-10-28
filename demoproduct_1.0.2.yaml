@@ -1,0 +1,29 @@
+info:
+  version: 1.0.2
+  title: Demoproduct
+  name: demoproduct
+gateways:
+  - datapower-api-gateway
+plans:
+  default-plan:
+    rate-limits:
+      default:
+        value: 100/1hour
+    title: Default Plan
+    description: Default Plan
+    approval: false
+apis:
+  demo1.0.2:
+    $ref: demo_1.0.2.yaml
+visibility:
+  view:
+    type: public
+    orgs: []
+    tags: []
+    enabled: true
+  subscribe:
+    type: authenticated
+    orgs: []
+    tags: []
+    enabled: true
+product: 1.0.0
